@@ -320,17 +320,31 @@ ul { list-style: none; }
 }
 
 .img-block {
-  background: var(--pink-blush);
   border-radius: var(--radius-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 64px;
+  overflow: hidden;
+  position: relative;
+}
+
+.img-block img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.img-block--tall {
+  grid-row: span 2;
+  min-height: 280px;
+  background: var(--cream-mid);
+}
+
+.img-block--sm {
   aspect-ratio: 1;
 }
-.img-block--tall { grid-row: span 2; aspect-ratio: auto; min-height: 280px; background: var(--cream-mid); }
-.img-block--sm { aspect-ratio: 1; }
-.img-block--offset { background: var(--sage-light); }
+
+.img-block--offset {
+  background: var(--sage-light);
+}
 
 /* =====================
    MENU
@@ -378,13 +392,11 @@ ul { list-style: none; }
 }
 .menu-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 
-.menu-card-img {
-  height: 200px;
-  background: var(--pink-blush);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 72px;
+.menu-card-img img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 0;
 }
 
 .menu-card-body { padding: 20px; }
