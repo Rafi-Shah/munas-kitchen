@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muna's Kitchen — Handcrafted Bakery & Desserts</title>
+  <meta name="description" content="Artisan bakery and desserts, baked fresh daily. Cakes, pastries, and seasonal treats made with love." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <header class="site-header" id="site-header">
+    <nav class="nav-inner">
+      <a href="#home" class="logo">Muna's <span>Kitchen</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#reserve">Reserve</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="nav-cta" onclick="scrollToSection('reserve')">Order Now</button>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-content">
+      <p class="hero-eyebrow">Fresh · Handcrafted · Daily</p>
+      <h1 class="hero-title">Baked with love,<br /><em>made to delight.</em></h1>
+      <p class="hero-sub">Artisan cakes, pastries & seasonal desserts — crafted every morning in our kitchen. No preservatives, just pure joy in every bite.</p>
+      <div class="hero-cta-group">
+        <button class="btn-primary" onclick="scrollToSection('menu')">Explore Menu</button>
+        <button class="btn-ghost" onclick="scrollToSection('reserve')">Make a Reservation</button>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card hero-card--1">
+        <div class="hero-badge">🎂</div>
+        <p>Custom Cakes</p>
+      </div>
+      <div class="hero-card hero-card--2">
+        <div class="hero-badge">🥐</div>
+        <p>Fresh Pastries</p>
+      </div>
+      <div class="hero-card hero-card--3">
+        <div class="hero-badge">🍮</div>
+        <p>Seasonal Desserts</p>
+      </div>
+      <div class="hero-blob"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="about-inner">
+        <div class="about-text">
+          <p class="section-label">Our Story</p>
+          <h2>A kitchen built<br />on family recipes</h2>
+          <p>What started as weekend baking for neighbours has grown into Muna's Kitchen — a beloved local bakery where every item carries the warmth of a home recipe. We use only fresh, locally sourced ingredients.</p>
+          <p>No shortcuts. No artificial flavours. Just the honest craft of baking done right.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <span class="stat-num">12+</span>
+              <span class="stat-label">Years baking</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">50+</span>
+              <span class="stat-label">Menu items</span>
+            </div>
+            <div class="stat">
+              <span class="stat-num">2k+</span>
+              <span class="stat-label">Happy customers</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-image-grid">
+          <div class="img-block img-block--tall">🍰</div>
+          <div class="img-block img-block--sm">🧁</div>
+          <div class="img-block img-block--sm img-block--offset">🥧</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <p class="section-label">What We Bake</p>
+      <h2 class="section-title">Our Menu</h2>
+      <div class="menu-filters">
+        <button class="filter-btn active" data-cat="all">All</button>
+        <button class="filter-btn" data-cat="cakes">Cakes</button>
+        <button class="filter-btn" data-cat="pastries">Pastries</button>
+        <button class="filter-btn" data-cat="desserts">Desserts</button>
+        <button class="filter-btn" data-cat="seasonal">Seasonal</button>
+      </div>
+      <div class="menu-grid" id="menu-grid">
+        <!-- Injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- RESERVATION -->
+  <section class="reserve-section" id="reserve">
+    <div class="container">
+      <div class="reserve-inner">
+        <div class="reserve-info">
+          <p class="section-label">Book a Table</p>
+          <h2>Reserve your<br />sweet moment</h2>
+          <p>Join us for a curated tasting experience or pre-order your custom cake. Reservations are confirmed within 24 hours.</p>
+          <div class="hours">
+            <div class="hours-row"><span>Monday – Friday</span><span>8:00 AM – 8:00 PM</span></div>
+            <div class="hours-row"><span>Saturday – Sunday</span><span>9:00 AM – 6:00 PM</span></div>
+          </div>
+        </div>
+        <div class="reserve-form-wrap">
+          <div id="form-success" class="form-success hidden">
+            <span class="success-icon">✓</span>
+            <h3>Reservation Received!</h3>
+            <p>We'll confirm your booking within 24 hours.</p>
+          </div>
+          <div id="reserve-form-container">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-name">Full Name</label>
+                <input type="text" id="res-name" placeholder="Muna Ali" required />
+              </div>
+              <div class="form-group">
+                <label for="res-email">Email</label>
+                <input type="email" id="res-email" placeholder="you@email.com" required />
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-phone">Phone</label>
+                <input type="tel" id="res-phone" placeholder="+880 1XXX XXXXXX" />
+              </div>
+              <div class="form-group">
+                <label for="res-guests">Guests</label>
+                <select id="res-guests">
+                  <option>1 guest</option>
+                  <option>2 guests</option>
+                  <option>3 guests</option>
+                  <option selected>4 guests</option>
+                  <option>5+ guests</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="res-date">Date</label>
+                <input type="date" id="res-date" required />
+              </div>
+              <div class="form-group">
+                <label for="res-time">Time</label>
+                <select id="res-time">
+                  <option>10:00 AM</option>
+                  <option>11:00 AM</option>
+                  <option>12:00 PM</option>
+                  <option>1:00 PM</option>
+                  <option>2:00 PM</option>
+                  <option>3:00 PM</option>
+                  <option>4:00 PM</option>
+                  <option>5:00 PM</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="res-notes">Special Requests</label>
+              <textarea id="res-notes" rows="3" placeholder="Dietary needs, custom cake, celebration..."></textarea>
+            </div>
+            <button class="btn-primary btn-full" id="submit-btn" onclick="submitReservation()">
+              Confirm Reservation
+            </button>
+            <p class="form-note" id="form-error"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="container">
+      <p class="section-label">Kind Words</p>
+      <h2 class="section-title">What our guests say</h2>
+      <div class="testimonial-grid">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"The layered mango cake was absolutely divine. Moist, fragrant, and beautifully presented. We'll be back every weekend!"</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">RA</div>
+            <div>
+              <strong>Rina Akhtar</strong>
+              <span>Regular customer</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Ordered a custom birthday cake and was blown away. The attention to detail was incredible and it tasted even better than it looked."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">SK</div>
+            <div>
+              <strong>Sajid Khan</strong>
+              <span>Custom cake order</span>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"The croissants are the best I've had outside of Paris. Fresh, buttery, and perfectly flaky every single time."</p>
+          <div class="reviewer">
+            <div class="reviewer-avatar">NH</div>
+            <div>
+              <strong>Nadia Hossain</strong>
+              <span>Loyal patron</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="contact-inner">
+        <div>
+          <p class="section-label">Find Us</p>
+          <h2>Visit the kitchen</h2>
+          <p>We're located in the heart of Dhaka, tucked into a cozy corner of Gulshan. Drop in, or call ahead to reserve.</p>
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <span>House 12, Road 4, Gulshan 2, Dhaka 1212</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">📞</span>
+              <span>+880 1700 000000</span>
+            </div>
+            <div class="contact-item">
+              <span class="contact-icon">✉️</span>
+              <span>hello@munaskitchen.com</span>
+            </div>
+          </div>
+        </div>
+        <div class="map-placeholder">
+          <div class="map-inner">
+            <span>📌</span>
+            <p>Gulshan 2, Dhaka</p>
+            <small>Interactive map goes here</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <a href="#home" class="logo logo--footer">Muna's <span>Kitchen</span></a>
+        <p class="footer-tagline">Baked with love, every day.</p>
+      </div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#reserve">Reserve</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <p class="footer-copy">© 2025 Muna's Kitchen. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/menu.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
